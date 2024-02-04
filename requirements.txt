@@ -14,5 +14,4 @@ SpeechRecognition==3.10.1
 sqlparse==0.4.4
 typing_extensions==4.9.0
 urllib3==2.2.0
-portaudio==19.7.1
 pyaudio==0.2.14
