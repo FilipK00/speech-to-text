@@ -27,6 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATIC_URL = '/static/'
+STATIC_ROOT = Path(BASE_DIR).joinpath('staticfiles')
+STATICFILES_DIRS = (Path(BASE_DIR).joinpath('static'),)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = BASE_DIR
 
 # Application definition
 
