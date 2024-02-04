@@ -1,0 +1,34 @@
+<!-- templates/voice_recognition.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voice Recognition</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <form id="voiceForm" method="get">
+      <button type="button" onclick="startRecognition()">Nagraj komendę</button>
+    </form>
+
+    <p id="recognizedText"></p>
+
+    <script>
+      function startRecognition() {
+        $.ajax({
+          url: "{% url 'voice_recognition' %}",
+          type: "GET",
+          dataType: "json",
+          success: function (data) {
+            $("#recognizedText").text(data.recognized_text);
+          },
+          error: function () {
+            alert("Wystąpił błąd przy rozpoznawaniu mowy.");
+          },
+        });
+      }
+    </script>
+  </body>
+</html>
