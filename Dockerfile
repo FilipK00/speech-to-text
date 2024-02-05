@@ -28,7 +28,6 @@ RUN apt-get install -y wget bzip2 \
 
 
 # Install python3.X-pyaudio (adjust X to your Python version)
-RUN apt-get install python3-pyaudio
 
 # Install pyaudio for the Python environment
 RUN pip install pyaudio
