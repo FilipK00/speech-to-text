@@ -1,0 +1,23 @@
+name: speechai
+services:
+  - name: web
+    environment_slug: python
+    http_port: 8000
+    routes:
+      - path: /.*
+    deploy:
+      image:
+        git:
+          repo_clone_url: https://github.com/FilipK00/speech-to-text
+          branch: main
+        dockerfile_path: Dockerfile
+    run_command: gunicorn speechai.wsgi:application
+    envs:
+      - key: "APP_KEY"
+        scope: "RUN_TIME"
+      - key: "DJANGO_SETTINGS_MODULE"
+        value: "speechai.settings"
+      - key: "GUNICORN_CMD_ARGS"
+        value: "--timeout 120"
+      - key: "WEB_CONCURRENCY"
+        value: "4"
