@@ -21,4 +21,4 @@ RUN apt-get update && apt-get install -y \
 EXPOSE 8000
 
 # Command to run your application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--worker-tmp-dir", "/dev/shm", "speechai.wsgi:application"]
+CMD ["gunicorn", "--bind", "whale-app-ypqx5.ondigitalocean.app", "--worker-tmp-dir", "/dev/shm", "speechai.wsgi:application"]
