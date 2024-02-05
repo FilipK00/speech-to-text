@@ -9,7 +9,6 @@ django_ajax==0.3.0
 gTTS==2.5.1
 idna==3.6
 numpy==1.26.3
-PyAudio==0.2.14
 pycparser==2.21
 pydub==0.25.1
 requests==2.31.0
