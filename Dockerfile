@@ -16,7 +16,6 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     portaudio19-dev \
     python3-dev \
-    portaudio19 \
     python3-pyaudio
 
 # Install python3.X-pyaudio (adjust X to your Python version)
