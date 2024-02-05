@@ -9,6 +9,7 @@ COPY . /app
 
 # Install any dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gunicorn
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -20,4 +21,4 @@ RUN apt-get update && apt-get install -y \
 EXPOSE 8000
 
 # Command to run your application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "speechai.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--worker-tmp-dir", "/dev/shm", "speechai.wsgi:application"]
