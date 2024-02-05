@@ -15,7 +15,8 @@ RUN pip install gunicorn
 RUN apt-get update && apt-get install -y \
     apt-utils \
     portaudio19-dev \
-    python3-dev
+    python3-dev \
+    gcc
 
 # Install python3.X-pyaudio (adjust X to your Python version)
 RUN apt-get install python3-pyaudio
