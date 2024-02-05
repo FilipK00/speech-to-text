@@ -7,9 +7,6 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . /app
 
-# Copy ALSA configuration file
-COPY asoundrc $HOME/.asoundrc
-
 # Install any dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install gunicorn
@@ -19,11 +16,10 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     portaudio19-dev \
     python3-dev \
-    gcc \
-    alsa-utils
+    gcc
 
 # Install python3.X-pyaudio (adjust X to your Python version)
-RUN apt-get install -y python3-pyaudio
+RUN apt-get install python3-pyaudio
 
 # Install pyaudio for the Python environment
 RUN pip install pyaudio
