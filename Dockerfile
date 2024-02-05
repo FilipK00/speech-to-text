@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     python3-dev
 
 # Install python3.X-pyaudio (adjust X to your Python version)
-RUN apt-get install -y python3.10-pyaudio
+RUN apt-get install -y python3-pyaudio
 
 # Expose port 8000 to the outside world
 EXPOSE 8000
