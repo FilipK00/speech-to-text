@@ -16,10 +16,15 @@ RUN apt-get update && apt-get install -y \
     apt-utils \
     portaudio19-dev \
     python3-dev \
-    gcc
+    gcc \
+    alsa-utils
+
+# Set up ALSA configuration
+ENV HOME /root
+COPY asoundrc $HOME/.asoundrc
 
 # Install python3.X-pyaudio (adjust X to your Python version)
-RUN apt-get install python3-pyaudio
+RUN apt-get install -y python3-pyaudio
 
 # Install pyaudio for the Python environment
 RUN pip install pyaudio
