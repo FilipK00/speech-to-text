@@ -28,4 +28,4 @@ RUN pip install pyaudio
 EXPOSE 8000
 
 # Command to run your application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--worker-tmp-dir", "/dev/shm", "speechai.wsgi:application"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8000", "--worker-tmp-dir", "/dev/shm", "speechai.wsgi:application", "--device", "/dev/snd:/dev/snd"]
