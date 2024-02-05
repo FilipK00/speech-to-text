@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y \
     python3-dev \
     gunicorn
 
+RUN apt install python3-pyaudio
+
 # Expose port 8000 to the outside world
 EXPOSE 8000
 
