@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-1m@)+asimg$rq+8s#g8@=47wjz*o^$d#$*2&xqocb37&54!d_*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['speech-to-text-78eei.ondigitalocean.app']
+ALLOWED_HOSTS = ['speech-to-text-78eei.ondigitalocean.app', '127.0.0.1']
 
 STATIC_URL = '/static/'
 STATIC_ROOT = Path(BASE_DIR).joinpath('staticfiles')
