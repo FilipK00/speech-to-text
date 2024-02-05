@@ -15,9 +15,8 @@ RUN pip install gunicorn
 RUN apt-get update && apt-get install -y \
     portaudio19-dev \
     python3-dev \
-    gunicorn
+    python3-pyaudio
 
-RUN apt-get install python3-pyaudio
 # Expose port 8000 to the outside world
 EXPOSE 8000
 
