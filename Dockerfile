@@ -13,7 +13,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     portaudio19-dev \
-    python3-dev
+    python3-dev \
+    gunicorn
 
 # Expose port 8000 to the outside world
 EXPOSE 8000
