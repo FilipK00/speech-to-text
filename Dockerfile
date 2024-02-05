@@ -15,11 +15,13 @@ RUN pip install gunicorn
 RUN apt-get update && apt-get install -y \
     apt-utils \
     portaudio19-dev \
-    python3-dev \
-    python3-pyaudio
+    python3-dev
 
 # Install python3.X-pyaudio (adjust X to your Python version)
-RUN apt-get install -y python3-pyaudio
+RUN apt-get install -y python3.10-pyaudio
+
+# Install pyaudio for the Python environment
+RUN pip install pyaudio
 
 # Expose port 8000 to the outside world
 EXPOSE 8000
