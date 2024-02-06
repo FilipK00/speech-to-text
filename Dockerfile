@@ -11,12 +11,14 @@ COPY . /app
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install gunicorn
 
-# Install system dependencies
 RUN apt-get update && apt-get install -y \
     apt-utils \
     portaudio19-dev \
     python3-dev \
-    gcc
+    gcc \
+    ffmpeg # Dodano instalację ffmpeg
+
+RUN apt-get install -y alsa-utils
 
 # Install python3.X-pyaudio (adjust X to your Python version)
 RUN apt-get install python3-pyaudio
