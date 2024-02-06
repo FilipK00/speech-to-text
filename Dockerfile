@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     ffmpeg # Dodano instalację ffmpeg
 
 RUN apt-get install -y alsa-utils
+RUN apt-get update && apt-get install -y pulseaudio
 
 # Install python3.X-pyaudio (adjust X to your Python version)
 RUN apt-get install python3-pyaudio
